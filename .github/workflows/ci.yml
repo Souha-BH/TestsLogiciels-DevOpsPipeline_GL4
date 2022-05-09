@@ -15,10 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ${{matrix.os}}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -40,6 +37,10 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-        
-  publish:
-    needs: build
+    - name: Build and push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: souha999/pipeline-demo-app
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
