@@ -1,9 +1,9 @@
 from typing import List
 
-from src.client.external_musician_client import ExternalMusicianClient
-from src.model.musician import Musician
-from src.repository.musician_repository import MusicianRepository
-from src.validation.musician_validation_service import MusicianValidationService
+from client.external_musician_client import ExternalMusicianClient
+from model.musician import Musician
+from repository.musician_repository import MusicianRepository
+from validation.musician_validation_service import MusicianValidationService
 
 
 class MusicianService:

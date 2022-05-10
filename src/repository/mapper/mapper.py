@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.model.musician import Musician
+from model.musician import Musician
 
 
 class Mapper:

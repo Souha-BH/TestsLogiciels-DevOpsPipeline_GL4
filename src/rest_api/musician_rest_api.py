@@ -2,8 +2,8 @@ from typing import List
 
 from fastapi import FastAPI
 
-from src.model.musician import Musician
-from src.service.musician_service import MusicianService
+from model.musician import Musician
+from service.musician_service import MusicianService
 
 
 class MusicianRestApi(FastAPI):

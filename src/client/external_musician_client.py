@@ -2,7 +2,7 @@ from typing import List
 
 import requests
 
-from src.config.external_musicians_client_config import ExternalMusicianClientConfig
+from config.external_musicians_client_config import ExternalMusicianClientConfig
 
 
 class ExternalMusicianClient:

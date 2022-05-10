@@ -2,9 +2,9 @@ from typing import List
 
 import pandas as pd
 
-from src.client.postgres_client import PostgresClient
-from src.model.musician import Musician
-from src.repository.mapper.mapper import Mapper
+from client.postgres_client import PostgresClient
+from model.musician import Musician
+from repository.mapper.mapper import Mapper
 
 
 class MusicianRepository:

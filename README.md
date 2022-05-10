@@ -2,7 +2,7 @@
 
 ## Introduction
 A simple application for fetching and inserting musicians using Rest API to demonstrate the examples of 
-unit test and integration test. 
+unit test, integration test and end-to-end test. 
 
 ## Requirements
 - Application is developed in Python 3.9

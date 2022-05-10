@@ -1,5 +1,5 @@
-from src.service.organization_service import OrganizationService
-from src.service.ticket_service import TicketService
+from service.organization_service import OrganizationService
+from service.ticket_service import TicketService
 
 
 class ConcertService:

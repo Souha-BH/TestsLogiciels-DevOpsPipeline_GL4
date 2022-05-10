@@ -3,7 +3,7 @@ from typing import List
 import pandas as pd
 import psycopg2
 
-from src.config.postgres_client_config import PostgresClientConfig
+from config.postgres_client_config import PostgresClientConfig
 
 
 class PostgresClient:
