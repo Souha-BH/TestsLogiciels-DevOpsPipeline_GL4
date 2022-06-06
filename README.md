@@ -4,23 +4,6 @@
 A simple application for fetching and inserting musicians using Rest API to demonstrate the examples of 
 unit test, integration test and end-to-end test. 
 
-## Requirements
-- Application is developed in Python 3.9
-- You can install the packages using the `requirements.txt` file.
-
-```bash
-pip install -r requirements.txt
-```
-
-## How to Use
-The purpose of the application is to show how to develop tests. So, **to run the application locally, you need to setup 
-a database instance and implement an endpoint for the external musician client.**
-
-### To run all tests
-```bash
-pytest test
-```
-
 ### Technologies used
 - `FastAPI` and `uvicorn` for Rest API
 - `unittest` for assertions and mocks

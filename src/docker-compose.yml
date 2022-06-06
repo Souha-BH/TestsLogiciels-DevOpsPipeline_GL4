@@ -1,17 +1,16 @@
-version: '3.1'
-
+version: '3.8'
 services:
-
   db:
-    image: postgres
+    image: postgres:14.1-alpine
     restart: always
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: musicians
-
-  adminer:
-    image: adminer
-    restart: always
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=musicians
     ports:
-      - 8080:8080
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
