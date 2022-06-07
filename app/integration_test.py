@@ -154,3 +154,35 @@ class MusicianServiceIntegrationTest(unittest.TestCase, AbstractIntegrationTestC
         self.assertEqual(musicians[1].surname, 'styles')
         self.assertEqual(musicians[1].age, 28)
         self.assertEqual(musicians[1].instrument, 'vocal')
+
+
+    
+    def test_save_musician(self):
+        # given
+        name = "adele"
+        surname = "adkins"
+        age = 34
+        instrument = 'vocal'
+
+        musician_service = self.__generate_musician_service()
+
+        # when
+        musician_service.save(name=name,
+                              surname=surname,
+                              age=age,
+                              instrument=instrument)
+
+        # then
+        connection = self.create_connection()
+        query = f"select * from test.musician where name = '{name}' " \
+                f"and surname = '{surname}' " \
+                f"and age = '{age}' " \
+                f"and instrument = '{instrument}' "
+
+        musician_fetched = pd.read_sql(query, con=connection)
+
+        self.assertEqual(len(musician_fetched), 1)
+        self.assertEqual(musician_fetched.iloc[0]['name'], name)
+        self.assertEqual(musician_fetched.iloc[0]['surname'], surname)
+        self.assertEqual(musician_fetched.iloc[0]['age'], age)
+        self.assertEqual(musician_fetched.iloc[0]['instrument'], instrument)
