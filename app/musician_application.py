@@ -15,12 +15,12 @@ app = FastAPI()
 @app.get("/")
 def start_application():
     postgres_url = "localhost"
-    postgres_port = 5432
+    postgres_port = 8080
     postgres_database = "musicians"
     postgres_user_name = "postgres"
     postgres_password = "postgres"
     external_client_url = "http://localhost"
-    external_client_port = 5432
+    external_client_port = 8080
 
     postgres_client_config = PostgresClientConfig(url=postgres_url,
                                                   port=postgres_port,
