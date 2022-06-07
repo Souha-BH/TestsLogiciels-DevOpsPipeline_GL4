@@ -55,10 +55,7 @@ class MusicianServiceTest(unittest.TestCase):
     def test_get_musician_by_name(self):
         # given
         musician_repository = Mock()
-        musician_repository.get_musician.return_value = Musician(name='ed',
-                                                                 surname='sherran',
-                                                                 age=31,
-                                                                 instrument='guitar')
+        musician_repository.get_musician.return_value = Musician(name='ed',surname='sherran',age=31,instrument='guitar')
         external_musicians_client = Mock()
 
         musician_service = MusicianService(musician_repository=musician_repository,
@@ -74,7 +71,7 @@ class MusicianServiceTest(unittest.TestCase):
         self.assertEqual(musician.age, 31)
         self.assertEqual(musician.instrument, 'guitar')
 
-    def test_validate_name(self):
+    def test_get_musician_name_if_invalid(self):
         # given
         musician_repository = Mock()
         external_musicians_client = Mock()
