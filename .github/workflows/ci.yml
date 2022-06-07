@@ -41,7 +41,6 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: souha999/pipeline-demo-app
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/simplewhale:${{ github.sha }}
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
