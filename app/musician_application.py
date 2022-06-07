@@ -19,7 +19,6 @@ def start_application():
     postgres_database = "musicians"
     postgres_user_name = "postgres"
     postgres_password = "postgres"
-
     external_client_url = "http://localhost"
     external_client_port = 5432
 
@@ -37,8 +36,9 @@ def start_application():
     musician_service = MusicianService(musician_repository=musician_repository,
                                        external_musician_client=external_musician_client)
     musician_rest_api = MusicianRestApi(musician_service=musician_service)
-    data = jsonable_encoder({"data": "Hello World"})
-    return JSONResponse(content=data)
+    return musician_rest_api
+    #data = jsonable_encoder({"data": "Hello World"})
+    #return JSONResponse(content=data)
 
 if __name__ == "__main__":
     uvicorn.run(app=start_application())
